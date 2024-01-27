@@ -4,32 +4,25 @@ using namespace std;
 
 class User {
 private:
-	string name;
-	string surname;
-	string address;
-	int number;
-	
-	string login;
-	string password;
+    string username;
+    string password;
+    string fullName;
+    string address;
+    string phone;
 public:
-	User();
-	User(string, string, string, int);
-	~User();
+    User(const string& username, const string& password, const string& fullName,
+        const string& address, const string& phone);
 
-	void prew_test();
-	void new_test();
+    ~User();
 
-	string getname();
-	string getsurname();
-	string getaddress();
-	int getnumber();
-	string getlogin();
-	string getpassword();
+    const string& getUsername() const;
+    const string& getPassword() const;
+    const string& getFullName() const;
+    const string& getAddress() const;
+    const string& getPhone() const;
 
-	string setname(string);
-	string setsurname(string);
-	string setaddress(string);
-	int setnumber(int);
-	string setlogin(string);
-	string setpassword(string);
+    virtual void displayMenu() const = 0;
+    virtual void takeTest() = 0;
+    virtual void viewResults() const = 0;
+
 };

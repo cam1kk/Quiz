@@ -1,3 +1,3 @@
 #include <iostream>
-#include "User.h"
+#include "Admin.h"
 using namespace std;
