@@ -10,4 +10,12 @@ public:
     Test(const string& testName);
     
     void addQuestion(string questionText);
+
+    string getTestName();
+    void setTestName(string);
+
+    void saveToFile();
+    void loadFromFile();
+    //
+    // //
 };
