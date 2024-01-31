@@ -16,4 +16,6 @@ public:
 
 	string getCategoryName();
 	void setCategoryName(string);
+	void saveToFile();
+	void loadFromFile();
 };

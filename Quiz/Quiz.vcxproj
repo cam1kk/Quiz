@@ -129,12 +129,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Category.cpp" />
+    <ClCompile Include="Question.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Tester.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Category.h" />
+    <ClInclude Include="Question.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>

@@ -128,9 +128,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Quiz\Category.cpp" />
+    <ClCompile Include="..\Quiz\Test.cpp" />
     <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="Administrator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Quiz\Category.h" />
+    <ClInclude Include="..\Quiz\Test.h" />
     <ClInclude Include="Admin.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

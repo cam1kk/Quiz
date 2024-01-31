@@ -1,4 +1,9 @@
 #include "Category.h"
+#include<iostream>
+#include<fstream>
+#include<vector>
+using namespace std;
+
 Category::Category(string name) {
 
 }
@@ -12,4 +17,12 @@ string Category::getCategoryName() {
 }
 void Category::setCategoryName(string newname){
 	categoryName = newname;
+}
+
+void Category::saveToFile() {
+	fstream file("../Category.txt", ios::out | ios::app | ios::binary);
+	int
+}
+void Category::loadFromFile() {
+
 }
