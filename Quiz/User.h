@@ -1,28 +1,34 @@
 #pragma once
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class User {
 private:
-    string username;
+    string login;
     string password;
-    string fullName;
+
+    string name;
+    string surname;
     string address;
     string phone;
 public:
-    User(const string& username, const string& password, const string& fullName,
-        const string& address, const string& phone);
+    User(string,string,string,string);
 
-    ~User();
+    void generatelogin(string,string);
+    bool isUser(User, vector<User>);
 
-    const string& getUsername() const;
-    const string& getPassword() const;
-    const string& getFullName() const;
-    const string& getAddress() const;
-    const string& getPhone() const;
+    string getname();
+    string getsurname();
+    string getaddress();
+    string getphone();
+    string getlogin();
+    string getpassword();
 
-    virtual void displayMenu() const = 0;
-    virtual void takeTest() = 0;
-    virtual void viewResults() const = 0;
-
+    void setname(string);
+    void setsurname(string);
+    void setaddress(string);
+    void setphone(string);
+    void setlogin(string);
+    void setpassword(string);
 };
