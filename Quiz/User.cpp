@@ -1,15 +1,22 @@
 #include <iostream>
+#include <random>
+#include <string>
 #include <time.h>
 #include "User.h"
 using namespace std;
 
 User::User(string name, string surname, string address, string phone) :
 	name(name),surname(surname),address(address),phone(phone) 
-{}
+{
+	generatelogin(name, surname);
+	generatepassword();
+}
 
 
 void User::generatelogin(string name, string surname) {
-	srand(time(NULL));
+	random_device dev;
+	mt19937 rng(dev());
+	uniform_int_distribution<mt19937::result_type> dist(1, 10);
 	char tmp[4];
 	for (int i = 0; i < 3; i++)
 	{
@@ -20,19 +27,12 @@ void User::generatelogin(string name, string surname) {
 		surname.substr(surname.length() - 1, surname.length()) +
 		"_" + tmp;
 }
-bool User::isUser(User user, vector<User> users) {
-	if (!users.empty()) {
-		for (int i = 0; i < users.size(); i++)
-		{
-			if (user.login == users[i].login) {
-				return true;
-			}
-		}
+void User::generatepassword() {
+	const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (int i = 0; i < 10; i++) {
+		int randomIndex = rand() % chars.length();
+		password += chars[randomIndex];
 	}
-	else {
-		return false;
-	}
-	return false;
 }
 
 string User::getname() { return name; }
@@ -48,3 +48,14 @@ void User::setaddress(string address) { this->address = address; }
 void User::setphone(string phone) { this->phone = phone; }
 void User::setlogin(string login) { this->login = login; }
 void User::setpassword(string password) { this->password = password; }
+
+//
+bool User::isUser(vector<User> users) {
+	for (int i = 0; i < users.size(); i++)
+	{
+		if (getlogin() == users[i].getlogin()) {
+			return true;
+		}
+	}
+	return false;
+}

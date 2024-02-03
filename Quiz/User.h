@@ -16,7 +16,8 @@ public:
     User(string,string,string,string);
 
     void generatelogin(string,string);
-    bool isUser(User, vector<User>);
+    void generatepassword();
+    bool isUser(vector<User>);
 
     string getname();
     string getsurname();

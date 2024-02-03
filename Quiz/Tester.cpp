@@ -1,19 +1,15 @@
 #include <iostream>
 #include "User.h"
+#include <time.h>
 using namespace std;
 
 int main() {
+	srand(time(NULL));
 	vector<User> users;
-	string name = "Camal";
-	string surname = "Babayev";
-	string address = "Address";
-	string phone = "88005553535";
-	User a("Camal", "Babayev", "Address", "88005553535");
-	a.generatelogin(name, surname);
-	while (!a.isUser(a,users))
+	while (true)
 	{
-		User b("Camal", "Babayev", "Address", "88005553535");
-		b.generatelogin("Camal", "Babayev");
-		users.push_back(b);
+		User a("Camal", "Babayev", "Address", "88005553535");
+
+		cout << a.getpassword() << endl;
 	}
 }
